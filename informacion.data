@@ -1,6 +1,6 @@
-FEBRERO : 2022 (
-    ["Arroz",10,50];
-    ["Cereal",22.50,35];
-    ["Jamon",7.50,89];
-    ["Pepsi",16,73];
+Marzo : 2022 (
+    ["Coca Cola",16,37];
+    ["Zucarita",22.50,40];
+    ["Salchicha",5,157];
+    ["Carne",43.75,15]
 )
