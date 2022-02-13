@@ -26,5 +26,5 @@ class parseData:
         file = open(archivo)
         info = file.read()
         file.close()
-        info = info.replace(" ","").replace("\n","").replace("\t","")
+        info = info.replace(" ","").replace("\n","").replace("\t","").replace("=","")
         return info

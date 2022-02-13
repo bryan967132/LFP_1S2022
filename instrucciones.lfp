@@ -1,7 +1,5 @@
 <¿
-    Nombre: "Alimentos",
-    Grafica: "Barras",
-    Titulo: "Reporte de Ventas de Alimentos",
-    TituloX: "Producto",
-    TituloY: "Total"
+    Nombre: "Productos",
+    Grafica: "Pie",
+    Titulo: "Ventas de la Tienda"
 ?>

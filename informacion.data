@@ -1,6 +1,9 @@
-Marzo : 2022 (
-    ["Coca Cola",16,37];
-    ["Zucarita",22.50,40];
-    ["Salchicha",5,157];
-    ["Carne",43.75,15]
+Marzo : 2022 = (
+    ["Chetos",2.50,37];
+    ["Tortrix",1,15];
+    ["Crujitos",3.50,23];
+    ["Poffets",4,17];
+    ["Ranchitas",1,40];
+    ["Granada",1,34];
+    ["Best",1.50,16]
 )

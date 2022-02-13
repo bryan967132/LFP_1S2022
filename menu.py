@@ -1,5 +1,6 @@
 from tkinter.filedialog import askopenfilename as openfile
 from analisis import graph
+from reporte import reporte
 from pData import parseData
 from pLFP import parseLFP
 class menu:
@@ -18,15 +19,28 @@ class menu:
                     info = data.datadec(arch).upper()
                     print('\nData Guardada\n')
                 elif opcion == 2:
-                    arch = openfile()
-                    inst = lfp.datadec(arch).upper()
-                    print('\nInstrucciones Guardadas\n')
+                    try:
+                        arch = openfile()
+                        inst = lfp.datadec(arch).upper()
+                        lfp.getBody(inst)['NOMBRE']
+                        lfp.getBody(inst)['GRAFICA']
+                        print('\nInstrucciones Guardadas\n')
+                    except:
+                        print('\nFaltan Datos Obligatorios\n')
                 elif opcion == 3:
-                    gr = graph()
-                    gr.graphs(info,inst)
-                    print('\nGráfica Generada\n')
+                    if inst != "" and info != "":
+                        gr = graph()
+                        gr.graphs(info,inst)
+                        print('\nGráfica Generada\n')
+                    else:
+                        print('\nNo Se Han Cargado Instrucciones o Data\n')
                 elif opcion == 4:
-                    print('\nReporte Generado\n')
+                    if info != "":
+                        rpt = reporte()
+                        rpt.reportar(data.getBody(info))
+                        print('\nReporte Generado\n')
+                    else:
+                        print('\nNo Se Ha Cargado Data\n')
                 elif opcion == 5:
                     print('\n¡Finalizado!\n')
                 else:
