@@ -50,7 +50,7 @@ class reporte:
                                 <thead>
                                     <tr class="table100-head">
                                         <th class="column1">
-                                            201908355 - DANNY HUGO BRYAN TEJAXUN PICHIYA
+                                            201908355 - Danny Hugo Bryan Tejax&uacute;n Pichiy&aacute;
                                         </th>
                                     </tr>
                                 </thead>
@@ -58,10 +58,10 @@ class reporte:
                             <table style="margin-bottom: 50px;">
                                 <thead>
                                     <tr class="table100-head">
-                                        <th class="column1">PRODUCTO</th>
-                                        <th class="column2">PRECIO</th>
-                                        <th class="column3">UNIDADES VENDIDAS</th>
-                                        <th class="column6">TOTAL</th>
+                                        <th class="column1">Producto</th>
+                                        <th class="column2">Precio</th>
+                                        <th class="column3">Unidades Vendidas</th>
+                                        <th class="column6">Total</th>
                                     </tr>
                                 </thead>
                                 <tbody>"""
@@ -79,9 +79,9 @@ class reporte:
                             <table style="margin-bottom: 50px;">
                                 <thead>
                                     <tr class="table100-head">
-                                        <th class="column1">PRODUCTO</th>
-                                        <th class="column2">PRECIO</th>
-                                        <th class="column6">UNIDADES VENDIDAS</th>
+                                        <th class="column1">Producto</th>
+                                        <th class="column2">Precio</th>
+                                        <th class="column6">Unidades Vendidas</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -97,9 +97,9 @@ class reporte:
                             <table style="margin-bottom: 50px;">
                                 <thead>
                                     <tr class="table100-head">
-                                        <th class="column1">PRODUCTO</th>
-                                        <th class="column2">PRECIO</th>
-                                        <th class="column6">UNIDADES VENDIDAS</th>
+                                        <th class="column1">Producto</th>
+                                        <th class="column2">Precio</th>
+                                        <th class="column6">Unidades Vendidas</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -132,7 +132,5 @@ class reporte:
         </html>"""
 
         file = open("Reporte/Reporte.html","w")
-
         amount_written = file.write(reporte)
-
         file.close()

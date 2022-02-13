@@ -16,12 +16,12 @@ class menu:
                 opcion = int(input('Opcion: '))
                 if opcion == 1:
                     arch = openfile()
-                    info = data.datadec(arch).upper()
+                    info = data.datadec(arch)
                     print('\nData Guardada\n')
                 elif opcion == 2:
                     try:
                         arch = openfile()
-                        inst = lfp.datadec(arch).upper()
+                        inst = lfp.datadec(arch)
                         lfp.getBody(inst)['NOMBRE']
                         lfp.getBody(inst)['GRAFICA']
                         print('\nInstrucciones Guardadas\n')

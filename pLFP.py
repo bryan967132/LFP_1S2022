@@ -7,7 +7,7 @@ class parseLFP:
         instrucciones = {}
         for i in info:
             i = i.split(":")
-            instrucciones[i[0]] = i[1]
+            instrucciones[i[0].upper()] = i[1]
         return instrucciones
 
     def datadec(self,archivo):

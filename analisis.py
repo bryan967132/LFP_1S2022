@@ -17,7 +17,7 @@ class graph:
         except:
             titulo = "Reporte de Ventas " + mes + " - " + año
 
-        if instrucciones['GRAFICA'] == "BARRAS":
+        if instrucciones['GRAFICA'].upper() == "BARRAS":
             eje_x = []
             eje_y = []
 
@@ -28,6 +28,7 @@ class graph:
                 eje_y.append(precio*cantidad)
 
             fig, ax = plotpy.subplots()
+            fig.canvas.manager.set_window_title(instrucciones['NOMBRE']) 
             ax.bar(eje_x,eje_y)
             ax.set_title(titulo)
 
@@ -42,7 +43,7 @@ class graph:
 
             plotpy.show()
 
-        elif instrucciones['GRAFICA'] == "PIE":
+        elif instrucciones['GRAFICA'].upper() == "PIE":
             nombre = []
             vend = []
 
@@ -57,11 +58,12 @@ class graph:
             colores = colormap(normdata(vend))
 
             fig, ax = plotpy.subplots()
+            fig.canvas.manager.set_window_title(instrucciones['NOMBRE']) 
             ax.pie(vend,labels=nombre,autopct="%0.1f %%",colors=colores)
             ax.set_title(titulo)
             plotpy.show()
 
-        elif instrucciones['GRAFICA'] == "LÍNEAS" or instrucciones['GRAFICA'] == "LINEAS":
+        elif instrucciones['GRAFICA'].upper() == "LÍNEAS" or instrucciones['GRAFICA'].upper() == "LINEAS":
             nombre = []
             vend = []
 
@@ -72,6 +74,7 @@ class graph:
                 vend.append(precio*cantidad)
                 
             fig, ax = plotpy.subplots()
+            fig.canvas.manager.set_window_title(instrucciones['NOMBRE']) 
             ax.plot(nombre,vend)
             ax.set_title(titulo)
             try:
