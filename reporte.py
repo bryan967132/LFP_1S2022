@@ -1,3 +1,4 @@
+import webbrowser
 class reporte:
     def reportar(self,productos):
         arrProd = []
@@ -25,20 +26,20 @@ class reporte:
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
         <!--===============================================================================================-->	
-            <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+            <link rel="icon" type="image/png" href="Reporte/images/icons/favicon.ico"/>
         <!--===============================================================================================-->
-            <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+            <link rel="stylesheet" type="text/css" href="Reporte/vendor/bootstrap/css/bootstrap.min.css">
         <!--===============================================================================================-->
-            <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" type="text/css" href="Reporte/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
         <!--===============================================================================================-->
-            <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+            <link rel="stylesheet" type="text/css" href="Reporte/vendor/animate/animate.css">
         <!--===============================================================================================-->
-            <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+            <link rel="stylesheet" type="text/css" href="Reporte/vendor/select2/select2.min.css">
         <!--===============================================================================================-->
-            <link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
+            <link rel="stylesheet" type="text/css" href="Reporte/vendor/perfect-scrollbar/perfect-scrollbar.css">
         <!--===============================================================================================-->
-            <link rel="stylesheet" type="text/css" href="css/util.css">
-            <link rel="stylesheet" type="text/css" href="css/main.css">
+            <link rel="stylesheet" type="text/css" href="Reporte/css/util.css">
+            <link rel="stylesheet" type="text/css" href="Reporte/css/main.css">
         <!--===============================================================================================-->
         </head>
         <body>
@@ -119,18 +120,20 @@ class reporte:
             
 
         <!--===============================================================================================-->	
-            <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+            <script src="Reporte/vendor/jquery/jquery-3.2.1.min.js"></script>
         <!--===============================================================================================-->
-            <script src="vendor/bootstrap/js/popper.js"></script>
-            <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+            <script src="Reporte/vendor/bootstrap/js/popper.js"></script>
+            <script src="Reporte/vendor/bootstrap/js/bootstrap.min.js"></script>
         <!--===============================================================================================-->
-            <script src="vendor/select2/select2.min.js"></script>
+            <script src="Reporte/vendor/select2/select2.min.js"></script>
         <!--===============================================================================================-->
-            <script src="js/main.js"></script>
+            <script src="Reporte/js/main.js"></script>
 
         </body>
         </html>"""
 
-        file = open("Reporte/Reporte.html","w")
+        file = open("Reporte.html","w")
         amount_written = file.write(reporte)
         file.close()
+
+        webbrowser.open_new_tab("Reporte.html")

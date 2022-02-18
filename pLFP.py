@@ -1,18 +1,22 @@
+import re
 class parseLFP:
     def getBody(self,info):
-        info = info.replace("<","").replace(">","")
-        info = info.replace("¿","").replace("?","")
-        info = info.replace("\"","")
+        caracteres = "Â<>¿?\""
+        for caracter in caracteres:
+            info = info.replace(caracter,"")
         info = info.split(",")
         instrucciones = {}
         for i in info:
             i = i.split(":")
-            instrucciones[i[0].upper()] = i[1]
+            instrucciones.update({i[0].upper():i[1]})
         return instrucciones
 
     def datadec(self,archivo):
         file = open(archivo)
         info = file.read()
         file.close()
-        info = info.replace(" ","").replace("Â","").replace("\n","").replace("\t","")
+        caracteres = "\n\t"
+        for caracter in caracteres:
+            info = info.replace(caracter,"")
+        info = info.replace(" ","")
         return info

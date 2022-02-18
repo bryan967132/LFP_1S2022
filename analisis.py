@@ -13,23 +13,23 @@ class graph:
         instrucciones = lfp.getBody(inst)
         titulo = ""
         try:
-               titulo = instrucciones['TITULO']
+            titulo = instrucciones['TITULO']
         except:
             titulo = "Reporte de Ventas " + mes + " - " + año
 
         if instrucciones['GRAFICA'].upper() == "BARRAS":
-            eje_x = []
-            eje_y = []
+            nombre = []
+            vend = []
 
             for i in productos:
                 precio = float(i['precio'])
                 cantidad = int(i['cantidad'])
-                eje_x.append(i['nombre'])
-                eje_y.append(precio*cantidad)
+                nombre.append(i['nombre'])
+                vend.append(precio*cantidad)
 
             fig, ax = plotpy.subplots()
             fig.canvas.manager.set_window_title(instrucciones['NOMBRE']) 
-            ax.bar(eje_x,eje_y)
+            ax.bar(nombre,vend)
             ax.set_title(titulo)
 
             try:
@@ -40,7 +40,7 @@ class graph:
                 ax.set_xlabel(instrucciones['TITULOX'])
             except:
                 pass
-
+            plotpy.savefig(instrucciones['NOMBRE'])
             plotpy.show()
 
         elif instrucciones['GRAFICA'].upper() == "PIE":
@@ -61,6 +61,7 @@ class graph:
             fig.canvas.manager.set_window_title(instrucciones['NOMBRE']) 
             ax.pie(vend,labels=nombre,autopct="%0.1f %%",colors=colores)
             ax.set_title(titulo)
+            plotpy.savefig(instrucciones['NOMBRE'])
             plotpy.show()
 
         elif instrucciones['GRAFICA'].upper() == "LÍNEAS" or instrucciones['GRAFICA'].upper() == "LINEAS":
@@ -85,4 +86,5 @@ class graph:
                 ax.set_xlabel(instrucciones['TITULOX'])
             except:
                 pass
+            plotpy.savefig(instrucciones['NOMBRE'])
             plotpy.show()
