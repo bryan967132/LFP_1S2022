@@ -3,6 +3,7 @@ from matplotlib import cm
 from matplotlib import colors
 from pData import parseData
 from pLFP import parseLFP
+from PIL import Image
 class graph:
     def graphs(self,info,inst):
         data = parseData()
@@ -41,7 +42,6 @@ class graph:
             except:
                 pass
             plotpy.savefig(instrucciones['NOMBRE'])
-            plotpy.show()
 
         elif instrucciones['GRAFICA'].upper() == "PIE":
             nombre = []
@@ -62,7 +62,6 @@ class graph:
             ax.pie(vend,labels=nombre,autopct="%0.1f %%",colors=colores)
             ax.set_title(titulo)
             plotpy.savefig(instrucciones['NOMBRE'])
-            plotpy.show()
 
         elif instrucciones['GRAFICA'].upper() == "LÍNEAS" or instrucciones['GRAFICA'].upper() == "LINEAS":
             nombre = []
@@ -87,4 +86,5 @@ class graph:
             except:
                 pass
             plotpy.savefig(instrucciones['NOMBRE'])
-            plotpy.show()
+        img = Image.open(instrucciones['NOMBRE']+'.png')
+        img.show()

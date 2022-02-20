@@ -1,4 +1,4 @@
-import re
+import easygui as eg
 class parseLFP:
     def getBody(self,info):
         caracteres = "Â<>¿?\""
@@ -11,7 +11,8 @@ class parseLFP:
             instrucciones.update({i[0].upper():i[1]})
         return instrucciones
 
-    def datadec(self,archivo):
+    def datadec(self):
+        archivo = eg.fileopenbox()
         file = open(archivo)
         info = file.read()
         file.close()

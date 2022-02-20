@@ -1,4 +1,3 @@
-from tkinter.filedialog import askopenfilename as openfile
 from analisis import graph
 from reporte import reporte
 from pData import parseData
@@ -15,13 +14,11 @@ class menu:
                 self.opciones()
                 opcion = int(input('Opcion: '))
                 if opcion == 1:
-                    arch = openfile()
-                    info = data.datadec(arch)
+                    info = data.datadec()
                     print('\nData Guardada\n')
                 elif opcion == 2:
                     try:
-                        arch = openfile()
-                        inst = lfp.datadec(arch)
+                        inst = lfp.datadec()
                         lfp.getBody(inst)['NOMBRE']
                         lfp.getBody(inst)['GRAFICA']
                         print('\nInstrucciones Guardadas\n')
@@ -35,12 +32,15 @@ class menu:
                     else:
                         print('\nNo Se Han Cargado Instrucciones o Data\n')
                 elif opcion == 4:
-                    if info != "":
-                        rpt = reporte()
-                        rpt.reportar(data.getBody(info))
-                        print('\nReporte Generado\n')
-                    else:
-                        print('\nNo Se Ha Cargado Data\n')
+                    try:
+                        if info != "":
+                            rpt = reporte()
+                            rpt.reportar(data.getBody(info))
+                            print('\nReporte Generado\n')
+                        else:
+                            print('\nNo Se Ha Cargado Data\n')
+                    except:
+                        print('\nHa Ocurrido Un Error Al Generar El Reporte\n')
                 elif opcion == 5:
                     print('\n¡Finalizado!\n')
                 else:

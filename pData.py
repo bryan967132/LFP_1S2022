@@ -1,3 +1,4 @@
+import easygui as eg
 class parseData:
     def getMonth(self,info):
         return info.split("=")[0].split(":")[0]
@@ -21,7 +22,8 @@ class parseData:
             body.append(prod)
         return body
 
-    def datadec(self,archivo):
+    def datadec(self):
+        archivo = eg.fileopenbox()
         file = open(archivo)
         info = file.read()
         file.close()
